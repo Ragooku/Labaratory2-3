@@ -145,40 +145,153 @@ button:hover {
     margin-bottom: 15px;
 }
 
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: auto;
+    height: auto;
+}
+
+.main-container{
+    width: 1140px;
+    height: auto;
+    position: relative;
+    padding: 0;
+}
+
+.gallery {
+    margin-left: 20px;
+    position: relative;
+    width: 1100px;
+    height: 700px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
 .slider {
     width: 1100px;
-    height: 600px;
+    height: 700px;
     position: relative;
     overflow: hidden;
   }
-  
-  .slider-img {
+
+.slides {
+    position: absolute;
     width: 100%;
     height: 100%;
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.cube {
+    width: 1100px;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    position: relative;
+    flex-direction: column;
+    margin: 0;
+    perspective: 800px;
+
+}
+
+.top img {
+    width: 1100px;
+    height: 350px;
+    max-height: 350px;
+    object-fit: cover;
+    object-position: top;
+    backface-visibility: hidden;
+    margin-bottom: -6px;
+}
+
+.bottom img {
+    width: 1100px;
+    height: 350px;
+    max-height: 350px;
+    object-fit: cover;
+    object-position: bottom;
+    backface-visibility: hidden;
+    margin-top: -6px;
+}
+
+.top {
     top: 0;
-    left: 0;
-    opacity: 0;
-  }
-  
-  .slider-img.active {
-    opacity: 1;
-  }
-  
-  .slider img {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    transition: transform 1s ease;
+    transform-origin: center bottom;
+}
+
+.bottom {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    transition: transform 1s ease;
+    transform-origin: center top;
+}
+/* Общий стиль для кнопок */
+.controlls {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1;
-  }
-  
-  .slider .prev {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    width: 40px; /* Измените размер по необходимости */
+    height: 100%;
+}
+
+/* Стили для кнопки "Назад" */
+.prev {
     left: 10px;
-  }
-  
-  .slider .next {
+}
+
+/* Стили для кнопки "Вперёд" */
+.next {
     right: 10px;
-  }
+}
+
+/* Эффект при наведении */
+.controlls:hover {
+    opacity: 1;
+}
+
+@keyframes rotateTop {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotateBottom {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.top {
+    animation: none;
+}
+
+.bottom {
+    animation: none;
+}
 
   .home-container2 {
     width: 80%;
