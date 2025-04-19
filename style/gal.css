@@ -206,8 +206,9 @@ main{
     object-fit: cover;
     object-position: top;
     backface-visibility: hidden;
-    margin-bottom: -6px;
+
 }
+
 
 .bottom img {
     width: 1100px;
@@ -216,7 +217,7 @@ main{
     object-fit: cover;
     object-position: bottom;
     backface-visibility: hidden;
-    margin-top: -6px;
+
 }
 
 .top {
@@ -265,25 +266,6 @@ main{
     opacity: 1;
 }
 
-@keyframes rotateTop {
-    from {
-        transform: translateY(-100%);
-    }
-
-    to {
-        transform: translateY(0);
-    }
-}
-
-@keyframes rotateBottom {
-    from {
-        transform: translateY(100%);
-    }
-
-    to {
-        transform: translateY(0);
-    }
-}
 
 .top {
     animation: none;
